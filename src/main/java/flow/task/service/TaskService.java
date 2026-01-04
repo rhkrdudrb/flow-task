@@ -51,7 +51,6 @@ public class TaskService {
 
         if (repo.countCustomAll() >= 200)
             throw new IllegalStateException("커스텀 확장자는 최대 200개까지 가능합니다.");
-        System.out.println(normalize);
         for (int i = 0; i < FixedWord.size(); i++) {
             Task task = FixedWord.get(i);
             String fixed = task.getExt();
@@ -60,7 +59,6 @@ public class TaskService {
                 break;
             }
         }
-        System.out.println("1111111111111111111111"+isFixed);
 
         if (isFixed) {
             throw new IllegalArgumentException("고정 확장자는 커스텀 확장자로 추가할 수 없습니다.");
