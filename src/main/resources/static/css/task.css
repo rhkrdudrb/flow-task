@@ -1,0 +1,140 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f4f6f8;
+}
+
+.wrapper {
+  width: 600px;
+  margin: 60px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.box {
+  border: 1px solid #e1e5ea;
+  border-radius: 10px;
+  padding: 18px;
+  margin-bottom: 18px;
+}
+
+.box-title {
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.input-area {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.input-area input {
+  flex: 1;
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid #cfd6dd;
+  border-radius: 4px;
+  outline: none;
+}
+
+.input-area button {
+  height: 40px;
+  padding: 0 16px;
+  border: 1px solid #999;
+  background: #f6f6f6;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.tag-area {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  background: #f0f0f0;
+  border-radius: 20px;
+  padding: 6px 12px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.tag .tag-text {
+  cursor: default;
+}
+
+.tag .tag-del {
+  margin-left: 8px;
+  cursor: pointer;
+  color: #555;
+}
+
+.tag .tag-del:hover {
+  color: red;
+}
+/* 카운터(오른쪽 위) */
+.custom-counter {
+  text-align: right;
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 6px;
+}
+
+.custom-list-wrap {
+  position: relative;
+  max-height: 180px;
+  overflow-y: auto;   /* 스크롤 */
+  overflow-x: hidden;
+  border-radius: 10px;
+}
+#customFade { display:none !important; }
+
+/* 하단 페이드 */
+.custom-fade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 60px;
+  pointer-events: none;
+  background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
+  display: none;
+}
+
+/* 더보기 버튼 아래 중앙 */
+.custom-bottom {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+/* 더보기 버튼 스타일 */
+.more-btn {
+  height: 38px;
+  min-width: 140px;
+  padding: 0 18px;
+  border: 1px solid #999;
+  background: #f6f6f6;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* 남은 개수 */
+.remain-text {
+  font-size: 12px;
+  color: #777;
+  margin-left: 6px;
+}
+

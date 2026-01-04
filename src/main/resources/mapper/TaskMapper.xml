@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="flow.task.repository.TaskRepository">
+
+    <select id="selectFixedAll" resultType="flow.task.domain.Task">
+        SELECT ext, enabled
+        FROM fixation
+        ORDER BY ext
+    </select>
+
+    <update id="updateFixed">
+        UPDATE fixation
+        SET enabled = #{enabled}
+        WHERE ext = #{ext}
+    </update>
+
+    <select id="selectCustomAll"
+            resultType="flow.task.domain.CustomTask">
+        SELECT ext
+        FROM custom_fixation
+        ORDER BY created_at DESC
+    </select>
+
+    <select id="countCustomAll" resultType="int">
+        SELECT COUNT(*) FROM custom_fixation
+    </select>
+
+    <insert id="insertCustom">
+        INSERT INTO custom_fixation (ext)
+        VALUES (#{ext})
+    </insert>
+
+    <delete id="deleteCustom">
+        DELETE FROM custom_fixation
+        WHERE ext = #{ext}
+    </delete>
+</mapper>

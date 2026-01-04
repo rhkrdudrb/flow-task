@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>확장자 차단</title>
+    <link rel="stylesheet" href="/css/task.css" />
+</head>
+<body>
+
+<div class="wrapper">
+    <h2>파일 확장자 차단</h2>
+
+    <!-- 1단계: 고정 확장자 -->
+    <div class="box">
+        <div class="box-title">고정 확장자</div>
+
+        <div class="fixed-list">
+            <label th:each="item : ${fixedList}">
+                <input type="checkbox"
+                       class="fixedChk"
+                       th:attr="data-ext=${item.ext}"
+                       th:checked="${item.enabled == 'Y'}" />
+                <span th:text="${item.ext}">exe</span>
+            </label>
+        </div>
+    </div>
+
+    <!-- 커스텀 확장자 -->
+    <div class="box">
+        <div class="box-title">커스텀 확장자</div>
+
+        <div class="custom-counter">
+            <span id="customCount">0</span> / 200
+        </div>
+
+        <div class="input-area">
+            <input id="customExtInput" type="text" maxlength="20" placeholder="확장자 입력 (최대 20자)" />
+            <button id="customAddBtn" type="button">추가</button>
+        </div>
+
+
+        <div class="custom-list-wrap" id="customListWrap">
+            <div id="customTagArea" class="tag-area"></div>
+            <div id="customFade" class="custom-fade"></div>
+        </div>
+
+        <div class="custom-bottom">
+            <button id="customMoreBtn" type="button" class="more-btn">
+                더보기 <span id="customRemainText" class="remain-text"></span>
+            </button>
+        </div>
+    </div>
+
+</div>
+
+<script src="/js/task.js"></script>
+</body>
+</html>
