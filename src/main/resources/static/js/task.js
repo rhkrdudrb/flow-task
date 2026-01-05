@@ -31,7 +31,7 @@ var pageSize = 20;      // 더보기 클릭 시 증가량
 
 function normalizeExtension(value) {
     if (!value) return "";
-    var v = String(value).trim().toLowerCase();
+    var v = String(value).trim().toLowerCase().replace(/^\./, "");
     if (v.indexOf(".") === 0) v = v.substring(1);
     return v;
 }
@@ -106,10 +106,9 @@ function addCustomExtension() {
         alert("커스텀 확장자는 최대 200개까지 등록할 수 있습니다.");
         return;
     }
-   if (!/^[a-zA-Z]+$/.test(ext)) {
-       return alert("확장자는 영어만 입력 가능합니다.");
+   if (!/^[a-z0-9]{1,20}$/.test(ext)){
+       return alert("확장자는 영문/숫자만 입력 가능합니다.");
    }
-
     fetch("/api/custom", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
